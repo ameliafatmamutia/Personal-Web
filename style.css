@@ -1,0 +1,714 @@
+/* ROOT VARIABLES */
+:root {
+    --color-white: #fff;
+    --color-light: #f4f4f4;
+    --color-dark: #525252;
+    --color-black: #141415;
+    --color-primary: #416f9b;
+    --color-primary-light: rgba(122, 185, 222, 0.112);
+    --color-success: #29f5a6;
+    --color-warning: #ffce31;
+
+    --transition: all 300ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--color-primary-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    max-width: 100vw;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--color-black);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 0.86rem;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 10rem 0 7rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+section h1 {
+    text-align: center;
+    display: block;
+    margin-bottom: 5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    padding: 1.4rem 3.4rem; /* top & bottom 1.4rem, left & right 3.4rem */
+    font-size: 1.1rem;
+    color: var(--color-black);
+    background: var(--color-white);
+    display: inline-block;
+    margin: 2rem 0;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    box-shadow: 0 2rem 2rem var(--color-primary-light); /* 0 itu lebar banyangan sumbu x, 2 rem itu lebar bayangan sumbu y, 2 rem lg itu sebaran bayangan */
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+
+/* ===== START OF NAVBAR ===== */
+nav {
+    width: 100%;
+    height: 5rem;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid var(--color-white);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+nav .container ul {
+    display: flex;
+    height: 100%;
+}
+
+nav .container ul li {
+    padding: 0 1rem 0;
+}
+
+nav .container ul li a {
+    height: 100%;
+    width: auto;
+    padding: 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: var(--color-white);
+    position: relative;
+    transition: var(--transition);
+}
+
+nav .container ul li a:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+/* ===== END OF NAVBAR ===== */
+
+
+
+/* ===== START OF LANDING PAGE ===== */
+section.landing {
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: 5rem;
+    padding-bottom: 14rem;
+    background: url("./images/Publication1.png") no-repeat center center/cover;
+}
+
+section.landing .container {
+    display: grid;
+    grid-template-columns: auto 28rem;
+    gap: 2rem;
+    }
+
+section.landing .info h1 {
+    text-align: left;
+    margin: 0;
+}
+
+section.landing .info h3 {
+    margin: 2.4rem 0 1rem;
+}
+
+section.landing .info p {
+    width: 35rem;
+}
+
+section.landing .profile-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.landing .profile-area .outer-circle {
+    width: 26rem;
+    height: 26rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    position: relative;
+    animation: move 30s linear infinite;
+}
+
+@keyframes move {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+section.landing .profile-area .outer-circle a {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    background: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1rem var(--color-primary-light);
+}
+
+section.landing .profile-area .outer-circle a:nth-child(1) {
+    left: calc(50% - 2rem);
+    top: -2rem;
+}
+
+section.landing .profile-area .outer-circle a:nth-child(2) {
+    right: -2rem;
+    top: calc(50% - 2rem);
+}
+
+section.landing .profile-area .outer-circle a:nth-child(3) {
+    left: -2rem;
+    top: calc(50% - 2rem);
+}
+
+section.landing .profile-area .outer-circle a:nth-child(4) {
+    bottom: -2rem;
+    left: calc(50% - 2rem);
+}
+
+section.landing .profile-area .inner-circle {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* ===== END OF LANDING PAGE ===== */
+
+
+
+/* ===== START OF EDUCATION SECTION ===== */
+section.education {
+    background: var(--color-white);
+}
+
+section.education .container {
+    display: grid;
+    grid-template-columns: 26rem auto;
+    gap: 5rem;
+}
+
+section.education h2 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+section.education h3 {
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+section.education h5 {
+    margin-bottom: 3rem;
+    color: var(--color-black);
+}
+
+section.education h4 {
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
+
+section.education ul {
+    margin-left: 2rem;
+}
+
+section.education ul li {
+    margin-bottom: 1rem;
+    list-style-type: circle;
+}
+
+/* ===== END OF EDUCATION SECTION ===== */
+
+
+
+/* ===== START OF EXPERIENCES SECTION ===== */
+section.experiences {
+    background: var(--color-light);
+}
+
+section.experiences .container {
+    width: 75rem;
+}
+
+section.experiences .experience-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.experiences .exp {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+section.experiences .exp .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section.experiences .exp .head .company {
+    display: flex;
+    gap: 1rem;
+}
+
+section.experiences .exp .head .company .company-logo {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+section.experiences .exp .head .company .info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+section.experiences .exp .head .company .info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+section.experiences .exp .head .time {
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+section.experiences .exp:nth-child(3) .head .time {
+    color: var(--color-primary);
+    font-size: 1rem;
+    display: none;
+}
+
+section.experiences .exp:nth-child(3) .info .head-of-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 5rem;
+    margin-bottom: 0.3rem;
+}
+
+section.experiences .exp:nth-child(3) .info p {
+    margin-left: 5rem;
+    margin-right: 12rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/* ===== END OF EXPERIENCES SECTION ===== */
+
+
+
+/* ===== START OF SKILLS SECTION ===== */
+section.skills .container {
+    width: 50%;
+}
+
+section.skills .skill {
+    margin-bottom: 5rem;
+}
+
+section.skills .skill .head {
+    background: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1.6rem;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+}
+
+section.skills .skill .head h4 {
+    color: var(--color-white);
+}
+
+section.skills .skill .head .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+section.skills .skill .item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding: 1.6rem;
+    background: var(--color-light);
+    margin-bottom: 0.3rem;
+    transition: var(--transition);
+}
+
+section.skills .skill .item:hover {
+    background: var(--color-white);
+}
+
+section.skills .skill .progress-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+section.skills .item .progress-bar {
+    width: 100%;
+    height: 1rem;
+    background: var(--color-primary-light);
+}
+
+section.skills .skill:nth-child(1) .item:nth-child(1) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(1) .item:nth-child(2) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(1) .item:nth-child(3) .progress-bar .progress {
+    height: 100%;
+    width: 80%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(1) .item:nth-child(4) .progress-bar .progress {
+    height: 100%;
+    width: 90%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(1) .item:nth-child(5) .progress-bar .progress {
+    height: 100%;
+    width: 80%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(2) .item:nth-child(1) .progress-bar .progress {
+    height: 100%;
+    width: 70%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(2) .item:nth-child(2) .progress-bar .progress {
+    height: 100%;
+    width: 65%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(2) .item:nth-child(3) .progress-bar .progress {
+    height: 100%;
+    width: 55%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(3) .item:nth-child(1) .progress-bar .progress {
+    height: 100%;
+    width: 98%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(3) .item:nth-child(2) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(3) .item:nth-child(3) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(3) .item:nth-child(4) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+
+section.skills .skill:nth-child(3) .item:nth-child(5) .progress-bar .progress {
+    height: 100%;
+    width: 95%;
+    background: var(--color-primary);
+}
+/* ===== END OF SKILLS SECTION ===== */
+
+
+
+/* ===== START OF EXTRACURRICULAR ACTIVITIES SECTION ===== */
+section.activities {
+    background: var(--color-light);
+}
+
+section.activities .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+section.activities .container .activity {
+    background: var(--color-white);
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: default;
+    transition: var(--transition);
+}
+
+section.activities .container .activity:hover {
+    box-shadow: 0 3rem 3rem var(--color-primary-light);
+}
+
+section.activities .container .activity .images {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+section.activities .container .activity:nth-child(2) span {
+    background: var(--color-warning);
+}
+
+section.activities .container .activity:nth-child(3) span {
+    background: var(--color-success);
+}
+
+section.activities .container .activity:nth-child(1) ul li {
+    font-size: 1.2rem;
+}
+
+/* ===== END OF EXTRACURRICULAR ACTIVITIES SECTION ===== */
+
+
+
+/* ===== START OF CONTACT SECTION ===== */
+section.contact {
+    background: url("./images/background\ contact\ me.jpg") no-repeat center center/cover;
+    padding: 0;
+    max-width: 100vw;
+}
+
+section.contact .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.7);
+    padding: 10rem 0 7rem;
+}
+
+section.contact .container {
+    width: 40%;
+}
+
+section.contact .container h1 {
+    margin: 0;
+    color: var(--color-white);
+}
+
+section.contact .container p {
+    text-align: center;
+    color: var(--color-white);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+section.contact form {
+    margin-top: 3rem;
+}
+
+section.contact form input, section.contact form textarea {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1.6rem;
+    border: 1px solid var(--color-white);
+    background: transparent;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+section.contact form textarea {
+    height: 10rem;
+}
+
+section.contact form input:focus, section.contact form textarea:focus {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+section.contact form input::placeholder, section.contact form textarea::placeholder {
+    color: var(--color-white);
+}
+
+section.contact form .btn {
+    width: 14rem;
+    border: none;
+    background: var(--color-white);
+    color: var(--color-black);
+    margin: 2rem auto 0;
+}
+
+section.contact form .btn:hover {
+    background: var(--color-primary);
+    cursor: pointer;
+    color: var(--color-white);
+}
+/* ===== END OF CONTACT SECTION ===== */
+
+
+
+/* ===== START OF FOOTER ===== */
+footer {
+    padding-top: 5rem;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container ul {
+    display: flex;
+    gap: 3rem;
+}
+
+footer .container ul a {
+    color: var(--color-dark);
+    transition: var(--transition);
+}
+
+footer .container ul a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+footer .container .socials {
+    display: flex;
+    gap: 2rem;
+}
+
+footer .container .socials a {
+    background: var(--color-light);
+    color: var(--color-dark);
+    padding: 0.3rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    align-items: center;
+    text-align: center;
+}
+
+footer .container .socials a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+footer .copyright {
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem 0;
+    font-size: 0.8rem;
+}
+/* ===== END OF FOOTER ===== */
